@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="jp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>image targets</title>
+    <script src="//cdn.8thwall.com/web/aframe/8frame-0.8.2.min.js"></script>
+    <script src="//cdn.8thwall.com/web/xrextras/xrextras.js"></script>
+    <script async src="//apps.8thwall.com/xrweb?appKey=2VPpnqemwrszYpsNpVmhd3JJQzK0wCXIbtyvbIRMjjp2GdgdAxuPwRsMG7DkLNsgpLfF8a"></script>
+  </head>
+  <body>
+    <a-scene
+      xrweb="disableWorldTracking: true"
+      xrextras-almost-there
+      xrextras-runtime-error
+      xrextras-loading >
+      <a-assets>
+        <!-- 必要であればここで3Dモデルやimgを読み込む -->
+      </a-assets>
+      <a-camera position="0 8 8"></a-camera>
+      <a-entity
+        light="type: directional; castShadow: false; intensity: 0.5;"
+        position="-0.8 3 1.85" >
+      </a-entity>
+
+      <a-entity xrextras-named-image-target="name: photo-bo01">
+        <!-- ここへマーカー認識した時に表示させたいオブジェクトを子要素として配置 -->
+        <a-box material="color: #00EDAF;" shadow >
+        </a-box>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
